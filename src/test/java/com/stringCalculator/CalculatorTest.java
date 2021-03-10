@@ -13,6 +13,10 @@ public class CalculatorTest {
 		assertEquals(0, Calculator.add(""));
 	}
 	// TODO: for single string it will return same string
+	@Test
+	public void shouldReturnNumberOnSingleString() {
+		assertEquals(1, Calculator.add("1"));
+	}
 	// TODO: for two strings it will return sum of the two
 
 }
