@@ -17,6 +17,9 @@ public class CalculatorTest {
 	public void shouldReturnNumberOnSingleString() {
 		assertEquals(1, Calculator.add("1"));
 	}
-	// TODO: for two strings it will return sum of the two
-
+	// TODO: for two strings separated by commas it will return sum of the two
+	@Test
+	public void shouldReturnSumofNumbersOnTwoStrings() {
+		assertEquals(3, Calculator.add("1,2"));
+	}
 }
