@@ -2,6 +2,6 @@ package stringCalculatorTDD;
 
 public class Calculator {
 	public static int add(String numbers) {
-		return -1;
+		return 0;
 	}
 }
