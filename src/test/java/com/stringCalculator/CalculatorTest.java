@@ -7,6 +7,10 @@ import org.junit.Test;
 import stringCalculatorTDD.Calculator;
 
 public class CalculatorTest {
+	//	Task - 1: Create a simple String calculator with a method signature:
+	//	———————————————
+	//	int Add(string numbers)
+	//	———————————————
 	// TODO: for empty string it will return zero
 	@Test
 	public void shouldReturnZeroOnEmptyString() {
@@ -19,7 +23,13 @@ public class CalculatorTest {
 	}
 	// TODO: for two strings separated by commas it will return sum of the two
 	@Test
-	public void shouldReturnSumofNumbersOnTwoStrings() {
+	public void shouldReturnSumOfNumbersOnTwoStrings() {
 		assertEquals(3, Calculator.add("1,2"));
+	}
+	//	Task - 2: Allow the Add method to handle an unknown amount of numbers
+	//	TODO: for multiple strings separated by commas it will return sum of all
+	@Test
+	public void shouldReturnSumOfAllNumbers() {
+		assertEquals(6,Calculator.add("1,2,3"));
 	}
 }
