@@ -16,7 +16,7 @@ public class Calculator {
 	}
 
 	private static String[] splitter(String numbers) {
-		String[] num=numbers.split(",");
+		String[] num=numbers.split(",|\n");
 		return num;
 	}
 
