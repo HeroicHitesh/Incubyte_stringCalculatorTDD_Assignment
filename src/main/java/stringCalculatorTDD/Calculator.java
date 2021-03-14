@@ -9,13 +9,17 @@ public class Calculator {
 			return 0;
 		} else {
 			String[] num = splitter(numbers);
-			int sum=0;
 			int size=num.length;
-			for(int i=0; i<size; i++){
-				sum = sum + toInt(num[i]);
-			}
-			return sum;
+			return findSum(num, size);
 		}
+	}
+
+	private static int findSum(String[] num, int size) {
+		int sum=0;
+		for(int i=0; i<size; i++){
+			sum = sum + toInt(num[i]);
+		}
+		return sum;
 	}
 
 	private static String[] splitter(String numbers) {
