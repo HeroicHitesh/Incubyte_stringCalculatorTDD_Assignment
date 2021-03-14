@@ -1,5 +1,8 @@
 package stringCalculatorTDD;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Calculator {
 	public static int add(String numbers) {
 		if(numbers.isEmpty()) { 
@@ -16,6 +19,13 @@ public class Calculator {
 	}
 
 	private static String[] splitter(String numbers) {
+		if(numbers.startsWith("//")) {
+			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(numbers);
+			m.matches();
+			String customDelim = m.group(1);
+			String num=m.group(2);
+			return num.split(customDelim);
+		}
 		String[] num=numbers.split(",|\n");
 		return num;
 	}
