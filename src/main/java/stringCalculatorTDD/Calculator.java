@@ -11,16 +11,20 @@ public class Calculator {
 		} else {
 			String[] num = splitter(numbers);
 			int size=num.length;
-			ArrayList<String> negative = new ArrayList<String>();
-			for(int i=0; i<size; i++) {
-				if(toInt(num[i])<0) {
-					negative.add(num[i]);
-				}
-			}
-			if(negative.size()>0) {
-				throw new RuntimeException();
-			}
+			throwExceptionIfAnyNegative(num, size);
 			return findSum(num, size);
+		}
+	}
+
+	private static void throwExceptionIfAnyNegative(String[] num, int size) {
+		ArrayList<String> negative = new ArrayList<String>();
+		for(int i=0; i<size; i++) {
+			if(toInt(num[i])<0) {
+				negative.add(num[i]);
+			}
+		}
+		if(negative.size()>0) {
+			throw new RuntimeException();
 		}
 	}
 
