@@ -19,15 +19,27 @@ public class Calculator {
 	}
 
 	private static String[] splitter(String numbers) {
-		if(numbers.startsWith("//")) {
-			Matcher m = Pattern.compile("//(.)\n(.*)").matcher(numbers);
-			m.matches();
-			String customDelim = m.group(1);
-			String num=m.group(2);
-			return num.split(customDelim);
+		if(isCustomDelimiterString(numbers)) {
+			return splitUsingCustomDelimiter(numbers);
 		}
+		return splitUsingCommaAndNewLine(numbers);
+	}
+
+	private static boolean isCustomDelimiterString(String numbers) {
+		return numbers.startsWith("//");
+	}
+
+	private static String[] splitUsingCommaAndNewLine(String numbers) {
 		String[] num=numbers.split(",|\n");
 		return num;
+	}
+
+	private static String[] splitUsingCustomDelimiter(String numbers) {
+		Matcher m = Pattern.compile("//(.)\n(.*)").matcher(numbers);
+		m.matches();
+		String customDelim = m.group(1);
+		String num=m.group(2);
+		return num.split(customDelim);
 	}
 
 	private static int toInt(String numbers) {
