@@ -49,4 +49,15 @@ public class CalculatorTest {
 	public void shouldAllowRegexCharAsCustomDelimiter() {
 		assertEquals(3,Calculator.add("//.\n1.2"));
 	}
+	//	Task - 5: Throw Exception for negative numbers
+	//	TODO: Throw exception for negative numbers
+	@Test
+	public void shouldThrowExceptionForNegativeNumbers() {
+		try{
+			Calculator.add("1,-2,3");
+			fail("Exception expected");
+		}catch(RuntimeException e) {
+		}
+	}
+	//	TODO: Exception message should have negative number
 }
