@@ -39,7 +39,7 @@ public class Calculator {
 		m.matches();
 		String customDelim = m.group(1);
 		String num=m.group(2);
-		return num.split(customDelim);
+		return num.split(Pattern.quote(customDelim));
 	}
 
 	private static int toInt(String numbers) {
