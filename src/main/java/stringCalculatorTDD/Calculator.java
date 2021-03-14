@@ -24,7 +24,7 @@ public class Calculator {
 			}
 		}
 		if(negative.size()>0) {
-			throw new RuntimeException();
+			throw new RuntimeException("negatives not allowed: " + String.join(", ",negative));
 		}
 	}
 
