@@ -1,5 +1,6 @@
 package stringCalculatorTDD;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -10,6 +11,15 @@ public class Calculator {
 		} else {
 			String[] num = splitter(numbers);
 			int size=num.length;
+			ArrayList<String> negative = new ArrayList<String>();
+			for(int i=0; i<size; i++) {
+				if(toInt(num[i])<0) {
+					negative.add(num[i]);
+				}
+			}
+			if(negative.size()>0) {
+				throw new RuntimeException();
+			}
 			return findSum(num, size);
 		}
 	}
